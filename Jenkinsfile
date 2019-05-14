@@ -7,7 +7,7 @@ stage('git checkout process'){
 }
 
 stage('Build') {
-    withMaven(maven: '/opt/apache-maven') {
+    withMaven(maven: tool name: 'Maven', type: 'maven') {
       dir('app') {
         sh 'mvn clean package'
         
