@@ -7,9 +7,12 @@ stage('git checkout process'){
 }
 
 stage('compile package'){
-mvnHome = '/opt/apache-maven/bin'
-sh 'mvn test'
-echo 'started compiling'
+  def JAVA_HOME = '/usr/lib/java/jdk1.8.0_211'
+  def MAVEN_HOME = '/opt/apache-maven'
+  withEnv(["JAVA_HOME=${jdkHome}", "MAVEN_HOME=${mvnHome}", "PATH+MAVEN=${mvnHome}/bin"]){
+    pom = "pom.xml"
+    goals = "clean install"
+}
 }
   
   stage('SonarQube analysis') {
