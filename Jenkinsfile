@@ -6,11 +6,14 @@ stage('git checkout process'){
   echo 'completed sucessfully'
 }
 
-stage('compile package'){
-mvnHome = '/opt/apache-maven/bin'
-sh "'${mvnHome}/mvn' -Dmaven clean package"
-echo 'started compiling'
-}
+stage('Build') {
+    withMaven(maven: '/opt/apache-maven') {
+      dir('app') {
+        sh 'mvn clean package'
+        
+      }
+    }
+  }
   
   stage('SonarQube analysis') {
     withSonarQubeEnv('sonarqube') {
