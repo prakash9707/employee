@@ -1,8 +1,10 @@
+@Library('sharedlibrary@master') _
+
 node{
 def mvnHome
 stage('git checkout process'){
   echo 'started checkout'
-  git 'https://github.com/prakash9707/employee'
+  git gitRepo()
   echo 'completed sucessfully'
 }
 
