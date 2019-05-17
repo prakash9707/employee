@@ -1,4 +1,7 @@
 
+@Library('sharedlibrary@master') _
+
+
 node{
 def mvnHome
 stage('git checkout process'){
@@ -10,5 +13,6 @@ stage('git checkout process'){
 stage('Build') {
     echo 'hai over'
   }
+}
   
   
