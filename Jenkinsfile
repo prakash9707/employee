@@ -1,4 +1,3 @@
-@Library('sharedlibrary@master') _
 
 node{
 def mvnHome
