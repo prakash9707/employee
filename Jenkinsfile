@@ -9,6 +9,14 @@ stage('git checkout process'){
   git gitRepo()
   echo 'completed sucessfully'
 }
+  
+  stage('SonarQube analysis') {
+    withSonarQubeEnv('sonarqube') {
+      mvnHome = '/opt/apache-maven/bin'
+      sh "${mvnHome}/mvn sonar:sonar"
+      
+    }
+  }
 
 stage('Build') {
     echo 'hai over'
