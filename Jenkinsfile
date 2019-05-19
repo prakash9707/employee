@@ -16,9 +16,9 @@ stage('git checkout process'){
       sh "${mvnHome}/mvn sonar:sonar"
       
     }
-    def qualitygate = waitForQualityGate()
-      if (qualitygate.status != "OK") {
-         error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+    def qg = waitForQualityGate()
+      if (qg.status == 'Error') {
+          error "Pipeline aborted due to quality gate failure: ${qg.status}"
       }
   }
 
