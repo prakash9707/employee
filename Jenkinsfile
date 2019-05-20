@@ -6,7 +6,7 @@ MasterJenkinsfile(
 ProjectName:'springbootdemo',
 KubDeploymentName:'psspringboottest',
 ContainerName:'psspringboottest',
-GITRepoName:'https://gitlab.com/purpleslate/ps-samplespringboot-cicid.git',
+GITRepoName:'https://github.com/prakash9707/employee.git',
 GITBranch:'master'
 )
   
