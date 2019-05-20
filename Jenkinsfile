@@ -8,6 +8,8 @@ def getInformation = parameter()
 stage('git checkout process'){
   echo 'started checkout'
   echo getInformation.gitRepo
+  echo getInformation.dockerimg
+  echo getInformation.server
   git getInformation.gitRepo
   echo 'completed sucessfully'
 }
