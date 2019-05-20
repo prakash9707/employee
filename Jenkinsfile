@@ -4,10 +4,11 @@
 
 node{
 def mvnHome
+def getInformation = parameter()
 stage('git checkout process'){
   echo 'started checkout'
-  echo gitRepo()
-  git gitRepo()
+  echo getInformation.gitRepo
+  git getInformation.gitRepo
   echo 'completed sucessfully'
 }
   
