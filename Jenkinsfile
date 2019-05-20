@@ -2,6 +2,12 @@
 @Library('sharedlibrary@master') _
 
 
-parameter(gitRepo: 'https://github.com/prakash9707/springboot.git/', dockerimg : 'hello', server : '9000')
+MasterJenkinsfile(
+ProjectName:'springbootdemo',
+KubDeploymentName:'psspringboottest',
+ContainerName:'psspringboottest',
+GITRepoName:'https://gitlab.com/purpleslate/ps-samplespringboot-cicid.git',
+GITBranch:'master'
+)
   
   
