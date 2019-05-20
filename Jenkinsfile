@@ -6,6 +6,7 @@ node{
 def mvnHome
 stage('git checkout process'){
   echo 'started checkout'
+  echo gitRepo()
   git gitRepo()
   echo 'completed sucessfully'
 }
